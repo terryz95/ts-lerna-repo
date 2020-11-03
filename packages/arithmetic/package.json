@@ -1,0 +1,29 @@
+{
+  "name": "@terryz95/arithmetic",
+  "version": "0.0.1",
+  "description": "Calculate arithmetic accurately.",
+  "keywords": [
+    "arithmetic",
+    "algorithm"
+  ],
+  "author": "Terry Zhang <mousetrip@outlook.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npm.taobao.org/"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^4.0.5"
+  }
+}
