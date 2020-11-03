@@ -33,6 +33,9 @@
     "url": "https://github.com/terryz95/ts-lerna-repo/issues"
   },
   "dependencies": {
+    "@terryz95/arithmetic": "^0.0.1",
+    "axios": "^0.21.0",
+    "dayjs": "^1.9.4",
     "typescript": "^4.0.5"
   },
   "devDependencies": {
