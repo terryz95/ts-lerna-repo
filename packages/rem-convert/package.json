@@ -1,16 +1,14 @@
 {
-  "name": "@terryz95/arithmetic",
+  "name": "@terryz95/rem-convert",
   "version": "0.0.1",
-  "description": "Calculate arithmetic accurately.",
+  "description": "convert rem to px & convert px 2 rem.",
   "keywords": [
-    "arithmetic",
-    "algorithm"
+    "rem",
+    "px",
+    "convert"
   ],
   "author": "Terry Zhang <mousetrip@outlook.com>",
   "homepage": "https://github.com/terryz95/ts-lerna-repo#readme",
-  "bugs": {
-    "url": "https://github.com/terryz95/ts-lerna-repo/issues"
-  },
   "license": "MIT",
   "main": "src/index.ts",
   "directories": {
@@ -23,10 +21,20 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terryz95/ts-lerna-repo.git"
+  },
   "scripts": {
     "build": "tsc --pretty"
   },
+  "bugs": {
+    "url": "https://github.com/terryz95/ts-lerna-repo/issues"
+  },
   "devDependencies": {
     "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@terryz95/arithmetic": "^0.0.1"
   }
 }

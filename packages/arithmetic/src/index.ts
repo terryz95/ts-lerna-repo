@@ -6,7 +6,14 @@ enum ArithmeticType {
 }
 
 interface Arithmetic {
-  (type: ArithmeticType): (arg1: number, arg2: number) => number | undefined
+  (type: ArithmeticType): (arg1: number, arg2: number) => number
+}
+
+export const round = (value: Number, digits: Number) => {
+  if (digits < 0) {
+    throw new Error(`utils/arithmetic: param digits should be higher than 0.`)
+  }
+  return Number(`${Math.round(Number(`${value}e${digits}`))}e-${digits}`)
 }
 
 const arithmetic: Arithmetic = (type: ArithmeticType) => (
@@ -18,8 +25,7 @@ const arithmetic: Arithmetic = (type: ArithmeticType) => (
   }
   let t1: number = 0,
     t2: number = 0,
-    m: number,
-    n: number
+    m: number
   const s1 = arg1.toString()
   const s2 = arg2.toString()
   try {
@@ -33,9 +39,8 @@ const arithmetic: Arithmetic = (type: ArithmeticType) => (
       m = Math.pow(10, Math.max(t1, t2))
       return (arg1 * m + arg2 * m) / m
     case 'subtraction':
-      n = Math.max(t1, t2)
-      m = Math.pow(10, n)
-      return Number(((arg1 * m - arg2 * m) / m).toFixed(n))
+      m = Math.pow(10, Math.max(t1, t2))
+      return (arg1 * m - arg2 * m) / m
     case 'multiplication':
       return (
         (Number(s1.replace('.', '')) * Number(s2.replace('.', ''))) /
@@ -43,9 +48,12 @@ const arithmetic: Arithmetic = (type: ArithmeticType) => (
       )
     case 'division':
       return (
-        (Number(s1.replace('.', '')) / Number(s2.replace('.', ''))) *
-        Math.pow(10, t2 - t1)
+        Number(s1.replace('.', '')) /
+        Number(s2.replace('.', '')) /
+        Math.pow(10, t2 > t1 ? t2 - t1 : t1 - t2)
       )
+    default:
+      throw new Error(`utils/arithmetic: Type Not Found.`)
   }
 }
 
