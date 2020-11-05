@@ -7,8 +7,28 @@
 - https://juejin.im/post/6844903860331347975
 
 ### 待完成
-- [ ] Jest引入
-- [ ] 书写单元测试用例
-- [ ] 多包相互依赖实践
+- [x] Jest引入
+- [x] 书写单元测试用例
+- [x] 多包相互依赖实践
 - [ ] 上传npm实践
+
+### scripts
+
+```bash
+# 安装依赖
+yarn boostrap
+# or use npm
+
+# eslint
+yarn lint
+
+# 格式化
+yarn format
+
+# 测试
+yarn test
+
+# 构建
+yarn build
+```
 
