@@ -7,6 +7,7 @@
     "test": "jest",
     "format": "prettier --write \"packages/*/{src,__test__}/**\"",
     "lint": "npm run format & eslint -f eslint-formatter-friendly \"packages/*/{src,__test__}/**/*.ts\"",
+    "bootstrap": "npm install & lerna boostrap",
     "build": "lerna run build"
   },
   "devDependencies": {
