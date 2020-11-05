@@ -12,3 +12,23 @@
 - [x] 多包相互依赖实践
 - [ ] 上传npm实践
 
+### scripts
+
+```bash
+# 安装依赖
+yarn boostrap
+# or use npm
+
+# eslint
+yarn lint
+
+# 格式化
+yarn format
+
+# 测试
+yarn test
+
+# 构建
+yarn build
+```
+
